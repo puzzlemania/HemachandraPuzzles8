@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ADVISORY",
+  "nodes": [
+    {
+      "word": "ADVISORY",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "IVORY",
+        "SAD"
+      ]
+    },
+    {
+      "word": "IVORY",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "IVY",
+        "OR"
+      ]
+    },
+    {
+      "word": "SAD",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "IVY",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "OR",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

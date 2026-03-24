@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ADOPTION",
+  "nodes": [
+    {
+      "word": "ADOPTION",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "POINT",
+        "ADO"
+      ]
+    },
+    {
+      "word": "POINT",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "POT",
+        "IN"
+      ]
+    },
+    {
+      "word": "ADO",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "POT",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "IN",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ADORABLE",
+  "nodes": [
+    {
+      "word": "ADORABLE",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "BLADE",
+        "OAR"
+      ]
+    },
+    {
+      "word": "BLADE",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "LAD",
+        "BE"
+      ]
+    },
+    {
+      "word": "OAR",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "LAD",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "BE",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

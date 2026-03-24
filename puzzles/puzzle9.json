@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ABDICATE",
+  "nodes": [
+    {
+      "word": "ABDICATE",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "ABIDE",
+        "ACT"
+      ]
+    },
+    {
+      "word": "ABIDE",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "AID",
+        "BE"
+      ]
+    },
+    {
+      "word": "ACT",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "AID",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "BE",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ABNORMAL",
+  "nodes": [
+    {
+      "word": "ABNORMAL",
+      "locked": true,
+      "x": 360,
+      "y": 40,
+      "children": [
+        "MANOR",
+        "LAB"
+      ]
+    },
+    {
+      "word": "MANOR",
+      "x": 240,
+      "y": 160,
+      "children": [
+        "ARM",
+        "NO"
+      ]
+    },
+    {
+      "word": "LAB",
+      "locked": true,
+      "x": 600,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "ARM",
+      "x": 160,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "NO",
+      "x": 400,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

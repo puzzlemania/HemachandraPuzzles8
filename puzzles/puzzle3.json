@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ABDUCTOR",
+  "nodes": [
+    {
+      "word": "ABDUCTOR",
+      "locked": true,
+      "x": 360,
+      "y": 40,
+      "children": [
+        "ACTOR",
+        "BUD"
+      ]
+    },
+    {
+      "word": "ACTOR",
+      "x": 240,
+      "y": 160,
+      "children": [
+        "CAT",
+        "OR"
+      ]
+    },
+    {
+      "word": "BUD",
+      "locked": true,
+      "x": 600,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "CAT",
+      "x": 160,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "OR",
+      "x": 400,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

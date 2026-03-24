@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ABHORRED",
+  "nodes": [
+    {
+      "word": "ABHORRED",
+      "locked": true,
+      "x": 360,
+      "y": 40,
+      "children": [
+        "BOARD",
+        "HER"
+      ]
+    },
+    {
+      "word": "BOARD",
+      "x": 240,
+      "y": 160,
+      "children": [
+        "BAR",
+        "DO"
+      ]
+    },
+    {
+      "word": "HER",
+      "locked": true,
+      "x": 600,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "BAR",
+      "x": 160,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "DO",
+      "x": 400,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

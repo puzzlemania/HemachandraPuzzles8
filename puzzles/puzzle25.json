@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ABETMENT",
+  "nodes": [
+    {
+      "word": "ABETMENT",
+      "locked": true,
+      "x": 360,
+      "y": 40,
+      "children": [
+        "MEANT",
+        "BET"
+      ]
+    },
+    {
+      "word": "MEANT",
+      "x": 240,
+      "y": 160,
+      "children": [
+        "TAN",
+        "ME"
+      ]
+    },
+    {
+      "word": "BET",
+      "locked": true,
+      "x": 600,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "TAN",
+      "x": 160,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "ME",
+      "x": 400,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

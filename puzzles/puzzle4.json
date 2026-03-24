@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ABDUCTOR",
+  "nodes": [
+    {
+      "word": "ABDUCTOR",
+      "locked": true,
+      "x": 360,
+      "y": 40,
+      "children": [
+        "BROAD",
+        "CUT"
+      ]
+    },
+    {
+      "word": "BROAD",
+      "x": 240,
+      "y": 160,
+      "children": [
+        "DAB",
+        "OR"
+      ]
+    },
+    {
+      "word": "CUT",
+      "locked": true,
+      "x": 600,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "DAB",
+      "x": 160,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "OR",
+      "x": 400,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

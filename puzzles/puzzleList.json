@@ -1,0 +1,104 @@
+{
+  "puzzles": [
+    {
+      "name": "ABDUCTOR",
+      "file": "puzzle1.json"
+    },
+    {
+      "name": "ABDUCTOR",
+      "file": "puzzle2.json"
+    },
+    {
+      "name": "ABDUCTOR",
+      "file": "puzzle3.json"
+    },
+    {
+      "name": "ABDUCTOR",
+      "file": "puzzle4.json"
+    },
+    {
+      "name": "ABHORRED",
+      "file": "puzzle5.json"
+    },
+    {
+      "name": "ABNORMAL",
+      "file": "puzzle6.json"
+    },
+    {
+      "name": "ACCURATE",
+      "file": "puzzle7.json"
+    },
+    {
+      "name": "ACCURATE",
+      "file": "puzzle8.json"
+    },
+    {
+      "name": "ABDICATE",
+      "file": "puzzle9.json"
+    },
+    {
+      "name": "ACTIVITY",
+      "file": "puzzle10.json"
+    },
+    {
+      "name": "ADAPTIVE",
+      "file": "puzzle11.json"
+    },
+    {
+      "name": "ADHESIVE",
+      "file": "puzzle12.json"
+    },
+    {
+      "name": "ADJOURNS",
+      "file": "puzzle13.json"
+    },
+    {
+      "name": "ADMIRALS",
+      "file": "puzzle14.json"
+    },
+    {
+      "name": "ADMONISH",
+      "file": "puzzle15.json"
+    },
+    {
+      "name": "ADOPTION",
+      "file": "puzzle16.json"
+    },
+    {
+      "name": "ADOPTION",
+      "file": "puzzle17.json"
+    },
+    {
+      "name": "ADOPTION",
+      "file": "puzzle18.json"
+    },
+    {
+      "name": "ADORABLE",
+      "file": "puzzle19.json"
+    },
+    {
+      "name": "ADORABLE",
+      "file": "puzzle20.json"
+    },
+    {
+      "name": "ADVISORY",
+      "file": "puzzle21.json"
+    },
+    {
+      "name": "ADVISORY",
+      "file": "puzzle22.json"
+    },
+    {
+      "name": "AEROBICS",
+      "file": "puzzle23.json"
+    },
+    {
+      "name": "AEROBICS",
+      "file": "puzzle24.json"
+    },
+    {
+      "name": "ABETMENT",
+      "file": "puzzle25.json"
+    }
+  ]
+}

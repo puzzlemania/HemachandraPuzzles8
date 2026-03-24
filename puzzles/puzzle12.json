@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ADHESIVE",
+  "nodes": [
+    {
+      "word": "ADHESIVE",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "SIEVE",
+        "HAD"
+      ]
+    },
+    {
+      "word": "SIEVE",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "EVE",
+        "IS"
+      ]
+    },
+    {
+      "word": "HAD",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "EVE",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "IS",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

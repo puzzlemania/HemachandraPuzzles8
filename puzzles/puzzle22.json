@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ADVISORY",
+  "nodes": [
+    {
+      "word": "ADVISORY",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "ROADS",
+        "IVY"
+      ]
+    },
+    {
+      "word": "ROADS",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "ROD",
+        "AS"
+      ]
+    },
+    {
+      "word": "IVY",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "ROD",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "AS",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

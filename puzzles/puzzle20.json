@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ADORABLE",
+  "nodes": [
+    {
+      "word": "ADORABLE",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "ADORE",
+        "LAB"
+      ]
+    },
+    {
+      "word": "ADORE",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "ERA",
+        "DO"
+      ]
+    },
+    {
+      "word": "LAB",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "ERA",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "DO",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

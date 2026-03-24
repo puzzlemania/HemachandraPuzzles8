@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ACTIVITY",
+  "nodes": [
+    {
+      "word": "ACTIVITY",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "ATTIC",
+        "IVY"
+      ]
+    },
+    {
+      "word": "ATTIC",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "CAT",
+        "IT"
+      ]
+    },
+    {
+      "word": "IVY",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "CAT",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "IT",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

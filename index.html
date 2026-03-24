@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tree Puzzle Player</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+#toolbar{
+padding:10px;
+background:#222;
+color:white;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+button,select{
+padding:6px 12px;
+font-size:14px;
+}
+
+#message{
+padding:10px;
+font-weight:bold;
+font-size:16px;
+}
+
+#grid{
+position:relative;
+width:100vw;
+height:calc(100vh - 100px);
+
+background-size:40px 40px;
+
+background-image:
+linear-gradient(to right,#ddd 1px,transparent 1px),
+linear-gradient(to bottom,#ddd 1px,transparent 1px);
+}
+
+.block{
+position:absolute;
+display:flex;
+}
+
+/* NORMAL CELLS */
+
+.cell{
+width:40px;
+height:40px;
+border:2px solid #333;
+text-align:center;
+line-height:38px;
+font-size:18px;
+font-weight:bold;
+box-sizing:border-box;
+background:white;
+}
+
+/* CLUE CELLS */
+
+.clueCell{
+width:40px;
+height:40px;
+border:2px solid #222;
+text-align:center;
+line-height:38px;
+font-size:18px;
+font-weight:bold;
+box-sizing:border-box;
+
+background:#2f9e44;
+color:white;
+}
+
+/* INPUT */
+
+.cell input{
+width:100%;
+height:100%;
+border:none;
+outline:none;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+text-transform:uppercase;
+background:transparent;
+}
+
+/* FEEDBACK */
+
+.correct{
+background:#7ed957;
+}
+
+.wrong{
+background:#ff6b6b;
+}
+
+/* CONNECTORS */
+
+svg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+line{
+stroke:#2b3a67;
+stroke-width:3;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="toolbar">
+
+<select id="puzzleSelect">
+<option value="">Select Puzzle</option>
+</select>
+
+<button onclick="checkAnswers()">Check</button>
+
+<button onclick="giveUp()">Give Up</button>
+
+</div>
+
+<!-- MESSAGE AREA -->
+<div id="message"></div>
+
+<div id="grid">
+<svg id="lines"></svg>
+</div>
+
+<script>
+
+let puzzleData
+let wordBlocks={}
+
+const grid=document.getElementById("grid")
+const svg=document.getElementById("lines")
+const puzzleSelect=document.getElementById("puzzleSelect")
+
+/* LOAD PUZZLE LIST */
+
+fetch("./puzzles/puzzleList.json?t="+Date.now())
+.then(res=>res.json())
+.then(data=>{
+
+data.puzzles.forEach(p=>{
+
+let option=document.createElement("option")
+option.value=p.file
+option.textContent=p.name
+
+puzzleSelect.appendChild(option)
+
+})
+
+})
+
+/* LOAD PUZZLE */
+
+puzzleSelect.addEventListener("change",function(){
+
+if(this.value==="") return
+
+let file="puzzles/"+this.value+"?t="+Date.now()
+
+fetch(file)
+.then(res=>res.json())
+.then(data=>{
+
+puzzleData=data
+renderPuzzle()
+
+})
+
+})
+
+/* RENDER PUZZLE */
+
+function renderPuzzle(){
+
+grid.querySelectorAll(".block").forEach(b=>b.remove())
+svg.innerHTML=""
+wordBlocks={}
+
+document.getElementById("message").innerText = ""
+
+puzzleData.nodes.forEach(node=>{
+
+createBlock(node)
+
+})
+
+drawConnections()
+
+}
+
+/* CREATE BLOCK */
+
+function createBlock(node){
+
+const block=document.createElement("div")
+block.className="block"
+
+block.style.left=node.x+"px"
+block.style.top=node.y+"px"
+
+for(let i=0;i<node.word.length;i++){
+
+if(node.locked){
+
+const cell=document.createElement("div")
+cell.className="clueCell"
+cell.innerText=node.word[i]
+
+block.appendChild(cell)
+
+}else{
+
+const cell=document.createElement("div")
+cell.className="cell"
+
+const input=document.createElement("input")
+input.maxLength=1
+
+input.addEventListener("input",e=>{
+let v=e.target.value.toUpperCase().replace(/[^A-Z]/g,"")
+e.target.value=v
+})
+
+cell.appendChild(input)
+block.appendChild(cell)
+
+}
+
+}
+
+grid.appendChild(block)
+wordBlocks[node.word]=block
+
+}
+
+/* TREE CONNECTORS */
+
+function drawConnections(){
+
+puzzleData.nodes.forEach(node=>{
+
+node.children.forEach(child=>{
+
+const parent=wordBlocks[node.word]
+const childBlock=wordBlocks[child]
+
+if(!parent || !childBlock) return
+
+const r1=parent.getBoundingClientRect()
+const r2=childBlock.getBoundingClientRect()
+const g=grid.getBoundingClientRect()
+
+const startX=r1.left+r1.width/2-g.left
+const startY=r1.bottom-g.top
+
+const endX=r2.left+r2.width/2-g.left
+const endY=r2.top-g.top
+
+const midY=(startY+endY)/2
+
+drawLine(startX,startY,startX,midY)
+drawLine(startX,midY,endX,midY)
+drawLine(endX,midY,endX,endY)
+
+})
+
+})
+
+}
+
+function drawLine(x1,y1,x2,y2){
+
+const line=document.createElementNS(
+"http://www.w3.org/2000/svg",
+"line"
+)
+
+line.setAttribute("x1",x1)
+line.setAttribute("y1",y1)
+line.setAttribute("x2",x2)
+line.setAttribute("y2",y2)
+
+svg.appendChild(line)
+
+}
+
+/* CHECK ANSWERS */
+
+function checkAnswers(){
+
+let allCorrect = true
+
+puzzleData.nodes.forEach(node=>{
+
+if(node.locked) return
+
+const block=wordBlocks[node.word]
+const inputs=block.querySelectorAll("input")
+
+for(let i=0;i<inputs.length;i++){
+
+let input=inputs[i]
+let cell=input.parentElement
+
+let typed=input.value.toUpperCase()
+let correct=node.word[i]
+
+cell.classList.remove("correct","wrong")
+
+if(typed===""){
+allCorrect = false
+continue
+}
+
+if(typed===correct){
+cell.classList.add("correct")
+}else{
+cell.classList.add("wrong")
+allCorrect = false
+}
+
+}
+
+})
+
+const msg = document.getElementById("message")
+
+if(allCorrect){
+msg.innerText = "🎉 Congratulations! You solved the puzzle!"
+msg.style.color = "green"
+}else{
+msg.innerText = "Some answers are incorrect. Keep trying!"
+msg.style.color = "red"
+}
+
+}
+
+/* GIVE UP */
+
+function giveUp(){
+
+const msg = document.getElementById("message")
+msg.innerText = "No Problem : Revealing solution"
+msg.style.color = "blue"
+
+puzzleData.nodes.forEach(node=>{
+
+if(node.locked) return
+
+const block=wordBlocks[node.word]
+const inputs=block.querySelectorAll("input")
+
+for(let i=0;i<inputs.length;i++){
+
+let input=inputs[i]
+let cell=input.parentElement
+
+input.value=node.word[i]
+
+cell.classList.remove("wrong")
+cell.classList.add("correct")
+
+}
+
+})
+
+}
+
+</script>
+
+</body>
+</html>

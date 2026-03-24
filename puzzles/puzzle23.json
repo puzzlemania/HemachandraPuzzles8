@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "AEROBICS",
+  "nodes": [
+    {
+      "word": "AEROBICS",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "RAISE",
+        "COB"
+      ]
+    },
+    {
+      "word": "RAISE",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "EAR",
+        "IS"
+      ]
+    },
+    {
+      "word": "COB",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "EAR",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "IS",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}

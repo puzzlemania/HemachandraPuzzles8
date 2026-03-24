@@ -1,0 +1,44 @@
+{
+  "puzzleId": "puzzle_001",
+  "root": "ADMIRALS",
+  "nodes": [
+    {
+      "word": "ADMIRALS",
+      "locked": true,
+      "x": 400,
+      "y": 40,
+      "children": [
+        "DIALS",
+        "ARM"
+      ]
+    },
+    {
+      "word": "DIALS",
+      "x": 280,
+      "y": 160,
+      "children": [
+        "LID",
+        "AS"
+      ]
+    },
+    {
+      "word": "ARM",
+      "locked": true,
+      "x": 640,
+      "y": 160,
+      "children": []
+    },
+    {
+      "word": "LID",
+      "x": 200,
+      "y": 280,
+      "children": []
+    },
+    {
+      "word": "AS",
+      "x": 440,
+      "y": 280,
+      "children": []
+    }
+  ]
+}
